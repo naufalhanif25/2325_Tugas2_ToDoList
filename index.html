@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>TaskStack</title>
+    <link rel="icon" type="image/x-icon" href="assets/icon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="assets/logo.png" alt="logo">
+        <h1>TaskStack</h1>
+    </header>
+
+    <main class="container">
+        <!-- Todo header (search bar) -->
+        <section class="container-header">
+            <input id="input-todo" class="input-todo" type="text" placeholder="Type &quot;/&quot; to enter task" />
+            <button id="submit-todo" class="submit-todo">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12" y1="5" x2="12" y2="19"/>
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>                  
+            </button>
+        </section>
+
+        <!-- Todo list container -->
+        <section id="container-todos" class="container-todos"></section>
+    
+        <!-- Todo/task count -->
+        <section class="count-container">
+            <div id="task-count-ctr" class="task-count-ctr">
+                <p id="todo-count">Task: 0</p>
+            </div>
+            <div id="important-task" class="important-task">
+                <p id="important-count">Important: 0</p>
+            </div>
+        </section>
+    </main>
+    <script src="./js/main.js"></script>
+</body>
+</html>

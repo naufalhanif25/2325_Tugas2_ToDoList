@@ -1,0 +1,345 @@
+/* Color palette variables */
+:root {
+    --abs-white: #FFF;
+    --black: #1E272E;
+    --mid-black: #485460;
+    --abs-grey: #808E9B;
+    --light-grey: #D2DAE2;
+    --mid-green: #0BE881;
+    --fade-green: #35F39A;
+    --light-green: #77FEBE;
+    --mid-yellow: #EFB503;
+    --fade-yellow: #FFD32A;
+    --mid-red: #F53B57;
+    --fade-red: #FC7081;
+    --fade-ligth-red: #FEA3AD;
+    --light-red: #FFE4E5;
+    --mid-blue: #0FBCF9;
+    --sky-blue: #4BCFFA;
+    --light-blue: #7CDBFD;
+}
+
+* {
+    font-family: Helvetica;
+    font-size: 12pt;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--abs-white);
+    gap: 1.2em;
+    box-sizing: border-box;
+}
+
+/* Header style */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    padding: 0.8em 0;
+    background-color: var(--mid-green);
+    gap: 0.4em;
+}
+
+header img {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+header h1 {
+    margin: 0;
+    color: var(--abs-white);
+}
+
+/* Main container style */
+.container {
+    padding: 1.2em 1.2em;
+    width: 86%;
+    height: 72%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 1.6em;
+}
+
+.container-header {
+    width: 72%;
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+}
+
+.input-todo {
+    width: 100%;
+    height: 2em;
+    font-size: 12pt;
+    padding: 0.2em 0.8em;
+    border-radius: 0.6em;
+    outline: none;
+    color: var(--black);
+    border: 0.1em solid var(--light-grey);
+    transition: 80ms ease-out;
+}
+
+.input-todo::placeholder {
+    user-select: none;
+    color: var(--abs-grey);
+}
+
+.input-todo:focus {
+    border-color: var(--light-blue);
+}
+
+.submit-todo {
+    height: 100%;
+    padding: 0 1.2em;
+    border-radius: 0.6em;
+    color: var(--abs-white);
+    border: 0.1em solid var(--sky-blue);
+    background-color: var(--mid-blue);
+    transition: 160ms ease-out;
+    outline: none;
+}
+
+.submit-todo:hover {
+    background-color: var(--sky-blue);
+}
+
+.submit-todo:active {
+    background-color: var(--mid-blue);
+}
+
+.submit-todo svg {
+    pointer-events: none;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.submit-todo svg line {
+    stroke: var(--abs-white);
+    stroke-width: 0.16em;
+    stroke-linecap: round;
+}
+
+/* Todo container style */
+.container-todos {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    display: none;
+    flex-direction: column;
+    align-items: right;
+    gap: 0.8em;
+    box-sizing: border-box;
+    transition: all 320ms ease-out;
+}
+
+/* Scrollbar style */
+.container-todos::-webkit-scrollbar {
+    width: 0.2em;
+}
+
+.container-todos::-webkit-scrollbar-track {
+    background: var(--abs-white);
+}
+
+.container-todos::-webkit-scrollbar-thumb {
+    background: var(--mid-blue);
+    border-radius: 1.6em;
+}
+
+.container-todos::-webkit-scrollbar-thumb:hover {
+    background: var(--sky-blue);
+}
+
+/* Todo style */
+.todo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--abs-white);
+    border: 0 solid var(--light-blue);
+    border-bottom-width: 0.1em;
+}
+
+.todo div {
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+    margin: 0.8em 1.2em;
+    width: 100%;
+}
+
+.todo div h1 {
+    font-weight: normal;
+    color: var(--mid-black);
+    font-size: 10pt;
+    margin: 0;
+    margin-right: 0.6em;
+}
+
+.todo div h1 strong {
+    font-size: 10pt;
+    color: var(--mid-yellow);
+}
+
+.todo div p {
+    flex-grow: 1;
+    margin: 0;
+    color: var(--black);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-clamp: 1;
+    text-align: justify;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.edit-input {
+    flex-grow: 1;
+    outline: none;
+    border-radius: 0.4em;
+    padding: 0.4em 0.8em;
+    border: 0.1em solid var(--light-green);
+}
+
+.todo div button {
+    max-width: 6.4em;
+    padding: 0.4em 0.8em;
+    border-radius: 0.4em;
+    font-size: 10pt;
+    margin: 0;
+    color: var(--abs-white);
+    border: 0.1em solid var(--sky-blue);
+    background-color: var(--mid-blue);
+    transition: 160ms ease-out;
+}
+
+.todo div button:hover {
+    background-color: var(--sky-blue);
+}
+
+.todo div button:active {
+    background-color: var(--mid-blue);
+}
+
+.todo div button svg {
+    pointer-events: none;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.todo div button svg path {
+    stroke: var(--abs-white);
+    stroke-width: 0.12em;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.todo-content .edit-todo {
+    background-color: var(--mid-green);
+    border-color: var(--fade-green);
+}
+
+.todo-content .edit-todo:hover {
+    background-color: var(--fade-green);
+}
+
+.todo-content .edit-todo:active {
+    background-color: var(--mid-green);
+}
+
+.todo-content .delete-todo {
+    background-color: var(--mid-yellow);
+    border-color: var(--fade-yellow);
+}
+
+.todo-content .delete-todo:hover {
+    background-color: var(--fade-yellow);
+}
+
+.todo-content .delete-todo:active {
+    background-color: var(--mid-yellow);
+}
+
+.edit-todo svg path {
+    stroke-width: 0.16em;
+}
+
+.todo-content .important {
+    background-color: var(--mid-red);
+    border-color: var(--fade-red);
+}
+
+.todo-content .important:hover {
+    background-color: var(--fade-red);
+}
+
+.todo-content .important:active {
+    background-color: var(--mid-red);
+}
+
+.important svg path {
+    stroke-width: 0.16em;
+    fill: transparent;
+    transition: fill 160ms ease-out;
+}
+
+.important-todo {
+    background-color: var(--light-red) !important;
+    color: var(--abs-white);
+}
+
+.important-todo .important svg path {
+    fill: white !important;
+}
+
+/* Count container style */
+.count-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8em;
+}
+
+.count-container div {
+    box-sizing: border-box;
+    padding: 0.4em 1.2em;
+    border-radius: 0.4em;
+    opacity: 0;
+    cursor: default;
+    user-select: none;
+}
+
+.count-container div p {
+    font-size: 10pt;
+    margin: 0;
+}
+
+.task-count-ctr {
+    border: 0.1em solid var(--light-blue);
+}
+
+.task-count-ctr p {
+    color: var(--mid-blue);
+}
+
+.important-task {
+    border: 0.1em solid var(--fade-ligth-red);
+}
+
+.important-task p {
+    color: var(--mid-red);
+}
