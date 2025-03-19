@@ -62,6 +62,7 @@ header h1 {
 
 /* Main container style */
 .container {
+    position: absolute;
     padding: 1.2em 1.2em;
     width: 86%;
     height: 72%;
@@ -101,6 +102,9 @@ header h1 {
 }
 
 .submit-todo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     padding: 0 1.2em;
     border-radius: 0.6em;
@@ -212,6 +216,7 @@ header h1 {
     border-radius: 0.4em;
     padding: 0.4em 0.8em;
     border: 0.1em solid var(--light-green);
+    box-sizing: border-box;
 }
 
 .todo div button {
@@ -245,6 +250,12 @@ header h1 {
     stroke-width: 0.12em;
     stroke-linecap: round;
     stroke-linejoin: round;
+}
+
+.todo-content button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .todo-content .edit-todo {
@@ -302,7 +313,7 @@ header h1 {
 }
 
 .important-todo .important svg path {
-    fill: white !important;
+    fill: var(--abs-white) !important;
 }
 
 /* Count container style */
