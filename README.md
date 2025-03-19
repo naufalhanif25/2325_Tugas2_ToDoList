@@ -23,7 +23,7 @@ TaskStack adalah sebuah website manajemen tugas sederhana yang dapat membantu un
     📸 Preview
 </h2>
 <div align="center">
-    <img src="https://github.com/naufalhanif25/2325_Tugas2_ToDoList/blob/main/assets/preview.png" alt="preview" style="width: 360px; max-width: 100%; height: 200px; max-height: 100%"></img>
+    <img src="https://github.com/naufalhanif25/2325_Tugas2_ToDoList/blob/main/assets/preview.png" alt="preview" style="width: 360px; max-width: 100%; height: 240px; max-height: 100%"></img>
 </div>
 
 <!-- Features -->
